@@ -1,3 +1,5 @@
+local S = core.get_translator("nameznik")
+
 local nameznik__groups = {dig_immediate=2, not_blocking_trains=1}
 local nameznik__simplenodebox = {type = "fixed",fixed = {
             {-0.5, -0.5, -0.1, 0.5, -0.46, 0.1}}}
@@ -33,7 +35,7 @@ function nameznik_regnode(nname, nnum, ndesc, nfront, nside, nback)
 	if nname == "hranicnik" then npalette = "nameznik_palette2.png" end
 
 	minetest.register_node("nameznik:" .. nname .. nnum, {
-		description = ndesc .. " " .. nnum,
+		description = S(ndesc) .. " " .. nnum,
 		tiles = {"nameznik_bpx.png"},
 		overlay_tiles = {
 			{name = nfront, color = "white"},
@@ -60,7 +62,7 @@ function nameznik_regnoder05(nname, nnum, ndesc, nfront, nside, nback)
 	if nname == "hranicnik" then npalette = "nameznik_palette2.png" end
 
 	minetest.register_node("nameznik:r05_" .. nname .. nnum, {
-		description = ndesc .. " pravý +0,5 " .. nnum,
+		description = S(ndesc) .. " "..S("right +0,5").." " .. nnum,
 		tiles = {"nameznik_bpx.png"},
 		overlay_tiles = {
 			{name = nfront, color = "white"},
@@ -85,7 +87,7 @@ function nameznik_regnoder1(nname, nnum, ndesc, nfront, nside, nback)
 	if nname == "hranicnik" then npalette = "nameznik_palette2.png" end
 
 	minetest.register_node("nameznik:r1_" .. nname .. nnum, {
-		description = ndesc .. " pravý +1" .. nnum,
+		description = S(ndesc) .. " "..S("right +1").." ".. nnum,
 		tiles = {"nameznik_bpx.png"},
 		overlay_tiles = {
 			{name = nfront, color = "white"},
@@ -110,7 +112,7 @@ function nameznik_regnoder05h(nname, nnum, ndesc, nfront, nside, nback)
 	if nname == "hranicnik" then npalette = "nameznik_palette2.png" end
 
 	minetest.register_node("nameznik:r05h_" .. nname .. nnum, {
-		description = ndesc .. " pravý +0,5 vyšší " .. nnum,
+		description = S(ndesc) .. " "..S("right").." +0,5 "..S("higher").." " .. nnum,
 		tiles = {"nameznik_bpx.png"},
 		overlay_tiles = {
 			{name = nfront, color = "white"},
@@ -135,7 +137,7 @@ function nameznik_regnoder1h(nname, nnum, ndesc, nfront, nside, nback)
 	if nname == "hranicnik" then npalette = "nameznik_palette2.png" end
 
 	minetest.register_node("nameznik:r1h_" .. nname .. nnum, {
-		description = ndesc .. " pravý +1 vyšší " .. nnum,
+		description = S(ndesc) .. " "..S("right").." +1 "..S("higher").." " .. nnum,
 		tiles = {"nameznik_bpx.png"},
 		overlay_tiles = {
 			{name = nfront, color = "white"},
@@ -155,26 +157,28 @@ function nameznik_regnoder1h(nname, nnum, ndesc, nfront, nside, nback)
 	})
 end
 
-nameznik_regnode("nameznik_","1","Námezník","nameznik_over1.png","","nameznik_over1.png")
-nameznik_regnode("nameznik_","2","Námezník","nameznik_over2.png","","nameznik_over2.png")
-nameznik_regnode("nameznik_","3","Námezník","nameznik_over3.png","nameznik_blpx.png","nameznik_over3.png")
-nameznik_regnode("nameznik_","4","Námezník","","","")
-nameznik_regnode("nameznik_konc_","1","Námezník s koncovníkem","nameznik_end1.png^nameznik_over1.png","","nameznik_over1.png")
-nameznik_regnode("nameznik_konc_","2","Námezník s koncovníkem","nameznik_end1.png^nameznik_over2.png","","nameznik_over2.png")
-nameznik_regnode("koncovnik_","1","Koncovník","nameznik_end1.png","","")
-nameznik_regnode("hranicnik","","Hraničník","nameznik_border1.png","","nameznik_border1.png")
+nameznik_regnode("nameznik_","1","Fouling point","nameznik_over1.png","","nameznik_over1.png")
+nameznik_regnode("nameznik_","2","Fouling point","nameznik_over2.png","","nameznik_over2.png")
+nameznik_regnode("nameznik_","3","Fouling point","nameznik_over3.png","nameznik_blpx.png","nameznik_over3.png")
+nameznik_regnode("nameznik_","4","Fouling point","","","")
+nameznik_regnode("nameznik_","5","Fouling point","nameznik_over5.png","","nameznik_over5.png")
+nameznik_regnode("nameznik_konc_","1","Fouling point with end point of train route","nameznik_end1.png^nameznik_over1.png","","nameznik_over1.png")
+nameznik_regnode("nameznik_konc_","2","Fouling point with end point of train route","nameznik_end1.png^nameznik_over2.png","","nameznik_over2.png")
+nameznik_regnode("koncovnik_","1","End point of train route","nameznik_end1.png","","")
+nameznik_regnode("hranicnik","","Border point of railway companies","nameznik_border1.png","","nameznik_border1.png")
 
-nameznik_regnoder05("nameznik_","1","Námezník","nameznik_over1.png","","nameznik_over1.png")
-nameznik_regnoder05("nameznik_","2","Námezník","nameznik_05over2.png","","nameznik_05over2.png")
-nameznik_regnoder05("nameznik_","3","Námezník","nameznik_05over3.png","nameznik_blpx.png","nameznik_05over3.png")
-nameznik_regnoder05("nameznik_","4","Námezník","","","")
-nameznik_regnoder05("nameznik_konc_","1","Námezník s koncovníkem","nameznik_05end1.png^nameznik_over1.png","","nameznik_over1.png")
-nameznik_regnoder05("nameznik_konc_","2","Námezník s koncovníkem","nameznik_05end1.png^nameznik_05over2.png","","nameznik_05over2.png")
-nameznik_regnoder05("koncovnik_","1","Koncovník","nameznik_05end1.png","","")
-nameznik_regnoder05("hranicnik","","Hraničník","nameznik_05border1.png","","nameznik_05border1.png")
+nameznik_regnoder05("nameznik_","1","Fouling point","nameznik_over1.png","","nameznik_over1.png")
+nameznik_regnoder05("nameznik_","2","Fouling point","nameznik_05over2.png","","nameznik_05over2.png")
+nameznik_regnoder05("nameznik_","3","Fouling point","nameznik_05over3.png","nameznik_blpx.png","nameznik_05over3.png")
+nameznik_regnoder05("nameznik_","4","Fouling point","","","")
+nameznik_regnoder05("nameznik_","5","Fouling point","nameznik_over5.png","","nameznik_over5.png")
+nameznik_regnoder05("nameznik_konc_","1","Fouling point with end point of train route","nameznik_05end1.png^nameznik_over1.png","","nameznik_over1.png")
+nameznik_regnoder05("nameznik_konc_","2","Fouling point with end point of train route","nameznik_05end1.png^nameznik_05over2.png","","nameznik_05over2.png")
+nameznik_regnoder05("koncovnik_","1","End point of train route","nameznik_05end1.png","","")
+nameznik_regnoder05("hranicnik","","Border point of railway companies","nameznik_05border1.png","","nameznik_05border1.png")
 
-nameznik_regnoder1("hranicnik","","Hraničník","nameznik_border1.png","","nameznik_border1.png")
+nameznik_regnoder1("hranicnik","","Border point of railway companies","nameznik_border1.png","","nameznik_border1.png")
 
-nameznik_regnoder05h("hranicnik","","Hraničník","nameznik_05border1.png","","nameznik_05border1.png")
+nameznik_regnoder05h("hranicnik","","Border point of railway companies","nameznik_05border1.png","","nameznik_05border1.png")
 
-nameznik_regnoder1h("hranicnik","","Hraničník","nameznik_border1.png","","nameznik_border1.png")
+nameznik_regnoder1h("hranicnik","","Border point of railway companies","nameznik_border1.png","","nameznik_border1.png")
