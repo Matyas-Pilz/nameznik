@@ -27,7 +27,7 @@ local nameznik__nodebox_r1h = {type = "fixed",fixed = {
 			{1+-0.42, r05h-0.484, -0.06, 1+0.42, r05h-0.48, 0.06},{1+-0.4, r05h-0.48, -0.05, 1+0.4, r05h-0.476, 0.05},{1+-0.38, r05h-0.476, -0.04, 1+0.38, r05h-0.472, 0.04},{1+-0.36, r05h-0.472, -0.03, 1+0.36, r05h-0.468, 0.03},
 			{1+-0.34, r05h-0.468, -0.02, 1+0.34, r05h-0.464, 0.02},{1+-0.32, r05h-0.464, -0.01, 1+0.32, r05h-0.46, 0.01}}}
 
-function nameznik_regnode(nname, nnum, ndesc, nfront, nside, nback)
+local function nameznik_regnode(nname, nnum, ndesc, nfront, nside, nback)
 	local npalette
 	if nname == "nameznik_" then npalette = "nameznik_palette1.png" end
 	if nname == "nameznik_konc_" then npalette = "nameznik_palette1.png" end
@@ -54,7 +54,7 @@ function nameznik_regnode(nname, nnum, ndesc, nfront, nside, nback)
 	})
 end
 
-function nameznik_regnoder05(nname, nnum, ndesc, nfront, nside, nback)
+local function nameznik_regnoder05(nname, nnum, ndesc, nfront, nside, nback)
 	local npalette
 	if nname == "nameznik_" then npalette = "nameznik_palette1.png" end
 	if nname == "nameznik_konc_" then npalette = "nameznik_palette1.png" end
@@ -62,7 +62,7 @@ function nameznik_regnoder05(nname, nnum, ndesc, nfront, nside, nback)
 	if nname == "hranicnik" then npalette = "nameznik_palette2.png" end
 
 	minetest.register_node("nameznik:r05_" .. nname .. nnum, {
-		description = S(ndesc) .. " "..S("right +0,5").." " .. nnum,
+		description = S(ndesc) .. " "..S("right").." +0,5 " .. nnum,
 		tiles = {"nameznik_bpx.png"},
 		overlay_tiles = {
 			{name = nfront, color = "white"},
@@ -82,12 +82,12 @@ function nameznik_regnoder05(nname, nnum, ndesc, nfront, nside, nback)
 	})
 end
 
-function nameznik_regnoder1(nname, nnum, ndesc, nfront, nside, nback)
+local function nameznik_regnoder1(nname, nnum, ndesc, nfront, nside, nback)
 	local npalette
 	if nname == "hranicnik" then npalette = "nameznik_palette2.png" end
 
 	minetest.register_node("nameznik:r1_" .. nname .. nnum, {
-		description = S(ndesc) .. " "..S("right +1").." ".. nnum,
+		description = S(ndesc) .. " "..S("right").." +1 ".. nnum,
 		tiles = {"nameznik_bpx.png"},
 		overlay_tiles = {
 			{name = nfront, color = "white"},
@@ -107,7 +107,7 @@ function nameznik_regnoder1(nname, nnum, ndesc, nfront, nside, nback)
 	})
 end
 
-function nameznik_regnoder05h(nname, nnum, ndesc, nfront, nside, nback)
+local function nameznik_regnoder05h(nname, nnum, ndesc, nfront, nside, nback)
 	local npalette
 	if nname == "hranicnik" then npalette = "nameznik_palette2.png" end
 
@@ -132,7 +132,7 @@ function nameznik_regnoder05h(nname, nnum, ndesc, nfront, nside, nback)
 	})
 end
 
-function nameznik_regnoder1h(nname, nnum, ndesc, nfront, nside, nback)
+local function nameznik_regnoder1h(nname, nnum, ndesc, nfront, nside, nback)
 	local npalette
 	if nname == "hranicnik" then npalette = "nameznik_palette2.png" end
 
