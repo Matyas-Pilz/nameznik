@@ -26,6 +26,8 @@ local nameznik__nodebox_r1h = {type = "fixed",fixed = {
             {1+-0.5, -0.5, -0.1, 1+0.5, r05h-0.496, 0.1},{1+-0.48, r05h-0.496, -0.09, 1+0.48, r05h-0.492, 0.09},{1+-0.46, r05h-0.492, -0.08, 1+0.46, r05h-0.488, 0.08},{1+-0.44, r05h-0.488, -0.07, 1+0.44, r05h-0.484, 0.07},
 			{1+-0.42, r05h-0.484, -0.06, 1+0.42, r05h-0.48, 0.06},{1+-0.4, r05h-0.48, -0.05, 1+0.4, r05h-0.476, 0.05},{1+-0.38, r05h-0.476, -0.04, 1+0.38, r05h-0.472, 0.04},{1+-0.36, r05h-0.472, -0.03, 1+0.36, r05h-0.468, 0.03},
 			{1+-0.34, r05h-0.468, -0.02, 1+0.34, r05h-0.464, 0.02},{1+-0.32, r05h-0.464, -0.01, 1+0.32, r05h-0.46, 0.01}}}
+local nameznik__sboxr = {type = "fixed",fixed = {
+            {-0.5, -0.5, -0.1, 1, -0.35, 0.1}}}
 
 local function nameznik_regnode(nname, nnum, ndesc, nfront, nside, nback)
 	local npalette
@@ -77,7 +79,7 @@ local function nameznik_regnoder05(nname, nnum, ndesc, nfront, nside, nback)
 		paramtype2 = "color4dir",
 		drawtype = "nodebox",
 		node_box = nameznik__nodebox_r05,
-		selection_box = nameznik__simplenodebox,
+		selection_box = nameznik__sboxr,
 		groups = nameznik__groups,
 		is_ground_content = false,
 		palette = npalette,
@@ -103,7 +105,7 @@ local function nameznik_regnoder1(nname, nnum, ndesc, nfront, nside, nback)
 		paramtype2 = "color4dir",
 		drawtype = "nodebox",
 		node_box = nameznik__nodebox_r1,
-		selection_box = nameznik__simplenodebox,
+		selection_box = nameznik__sboxr,
 		groups = nameznik__groups,
 		is_ground_content = false,
 		palette = npalette,
@@ -129,7 +131,7 @@ local function nameznik_regnoder05h(nname, nnum, ndesc, nfront, nside, nback)
 		paramtype2 = "color4dir",
 		drawtype = "nodebox",
 		node_box = nameznik__nodebox_r05h,
-		selection_box = nameznik__simplenodebox,
+		selection_box = nameznik__sboxr,
 		groups = nameznik__groups,
 		is_ground_content = false,
 		palette = npalette,
@@ -155,7 +157,7 @@ local function nameznik_regnoder1h(nname, nnum, ndesc, nfront, nside, nback)
 		paramtype2 = "color4dir",
 		drawtype = "nodebox",
 		node_box = nameznik__nodebox_r1h,
-		selection_box = nameznik__simplenodebox,
+		selection_box = nameznik__sboxr,
 		groups = nameznik__groups,
 		is_ground_content = false,
 		palette = npalette,
