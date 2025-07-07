@@ -20,8 +20,8 @@ Nodeboxes of translated points are primary on the registered place, not viewable
 Best with AdvTrains and other advtrains-based mods.
 
 Credits:
-MatyasP - author of mode
-BlockHead - many points for mod improvement
+* MatyasP - author of mode
+* BlockHead - many points for mod improvement
 
 License:
 Code is under the MIT License. All textures are under CC0.
