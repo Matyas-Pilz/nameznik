@@ -1,7 +1,7 @@
 # textdomain: nameznik
 right=vpravo
 higher=vyšší
-Fouling point=Námezník
-Fouling point with end point of train route=Námezník s koncovníkem
-End point of train route=Koncovník
-Border point of railway companies=Hraničník
+Fouling point marker=Námezník
+Fouling point marker with end point of train route=Námezník s koncovníkem
+End point marker of train route=Koncovník
+Border point marker of railway companies=Hraničník
