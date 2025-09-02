@@ -22,6 +22,7 @@ Best with AdvTrains and other advtrains-based mods.
 Credits:
 * MatyasP - author of mode
 * BlockHead - many points for mod improvement
+* bgstack15 - crafting
 
 License:
 Code is under the MIT License. All textures are under CC0.
