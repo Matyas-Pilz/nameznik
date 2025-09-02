@@ -29,12 +29,19 @@ local nameznik__nodebox_r1h = {type = "fixed",fixed = {
 local nameznik__sboxr = {type = "fixed",fixed = {
             {-0.5, -0.5, -0.1, 1, -0.35, 0.1}}}
 
+local function get_palette(nname)
+	if nname == "nameznik_" or nname == "nameznik_konc_" or nname == "koncovnik_" then
+		return "nameznik_palette1.png"
+	elseif nname == "hranicnik" then
+		return "nameznik_palette2.png"
+	end
+	--safety
+	minetest.log("warning","Nameznik: cannot get palette choice for " .. nnname)
+	return "nameznik_palette1.png"
+end
+
 local function nameznik_regnode(nname, nnum, ndesc, nfront, nside, nback)
-	local npalette
-	if nname == "nameznik_" then npalette = "nameznik_palette1.png" end
-	if nname == "nameznik_konc_" then npalette = "nameznik_palette1.png" end
-	if nname == "koncovnik_" then npalette = "nameznik_palette1.png" end
-	if nname == "hranicnik" then npalette = "nameznik_palette2.png" end
+	local npalette = get_palette(nname)
 
 	minetest.register_node("nameznik:" .. nname .. nnum, {
 		description = S(ndesc) .. " " .. nnum,
@@ -55,14 +62,11 @@ local function nameznik_regnode(nname, nnum, ndesc, nfront, nside, nback)
 		is_ground_content = false,
 		palette = npalette,
 	})
+	nameznik.register_recipe(nname, nnum, 15, "")
 end
 
 local function nameznik_regnoder05(nname, nnum, ndesc, nfront, nside, nback)
-	local npalette
-	if nname == "nameznik_" then npalette = "nameznik_palette1.png" end
-	if nname == "nameznik_konc_" then npalette = "nameznik_palette1.png" end
-	if nname == "koncovnik_" then npalette = "nameznik_palette1.png" end
-	if nname == "hranicnik" then npalette = "nameznik_palette2.png" end
+	local npalette = get_palette(nname)
 
 	minetest.register_node("nameznik:r05_" .. nname .. nnum, {
 		description = S(ndesc) .. " "..S("right").." +0,5 " .. nnum,
@@ -84,11 +88,11 @@ local function nameznik_regnoder05(nname, nnum, ndesc, nfront, nside, nback)
 		is_ground_content = false,
 		palette = npalette,
 	})
+	nameznik.register_recipe(nname, nnum, 15, "_r05_")
 end
 
 local function nameznik_regnoder1(nname, nnum, ndesc, nfront, nside, nback)
-	local npalette
-	if nname == "hranicnik" then npalette = "nameznik_palette2.png" end
+	local npalette = get_palette(nname)
 
 	minetest.register_node("nameznik:r1_" .. nname .. nnum, {
 		description = S(ndesc) .. " "..S("right").." +1 ".. nnum,
@@ -110,11 +114,11 @@ local function nameznik_regnoder1(nname, nnum, ndesc, nfront, nside, nback)
 		is_ground_content = false,
 		palette = npalette,
 	})
+	nameznik.register_recipe(nname, nnum, 15, "_r1_")
 end
 
 local function nameznik_regnoder05h(nname, nnum, ndesc, nfront, nside, nback)
-	local npalette
-	if nname == "hranicnik" then npalette = "nameznik_palette2.png" end
+	local npalette = get_palette(nname)
 
 	minetest.register_node("nameznik:r05h_" .. nname .. nnum, {
 		description = S(ndesc) .. " "..S("right").." +0,5 "..S("higher").." " .. nnum,
@@ -136,11 +140,11 @@ local function nameznik_regnoder05h(nname, nnum, ndesc, nfront, nside, nback)
 		is_ground_content = false,
 		palette = npalette,
 	})
+	nameznik.register_recipe(nname, nnum, 15, "_r05h_")
 end
 
 local function nameznik_regnoder1h(nname, nnum, ndesc, nfront, nside, nback)
-	local npalette
-	if nname == "hranicnik" then npalette = "nameznik_palette2.png" end
+	local npalette = get_palette(nname)
 
 	minetest.register_node("nameznik:r1h_" .. nname .. nnum, {
 		description = S(ndesc) .. " "..S("right").." +1 "..S("higher").." " .. nnum,
@@ -162,6 +166,7 @@ local function nameznik_regnoder1h(nname, nnum, ndesc, nfront, nside, nback)
 		is_ground_content = false,
 		palette = npalette,
 	})
+	nameznik.register_recipe(nname, nnum, 15, "_r1h_")
 end
 
 nameznik_regnode("nameznik_","1","Fouling point marker","nameznik_over1.png","","nameznik_over1.png")
