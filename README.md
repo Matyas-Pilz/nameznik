@@ -19,16 +19,16 @@ Nodeboxes of translated points are primary on the registered place, not viewable
 
 Best with AdvTrains and other advtrains-based mods.
 
-Credits:
+#### Credits:
 * MatyasP - author of mode
 * BlockHead - many points for mod improvement
 * bgstack15 - crafting with support xcompat
 
-License:
+#### License:
 Code is under the MIT License. All textures are under CC0.
 
 -------------
-KNOWED ISSUES:
+#### KNOWED ISSUES:
 * 1st) Mod creator has a procrastination for update and upgrade of
 Noderoads and Nodehouses for a long time (but works on update).
 * 2nd) Nodeboxes are not so much real as mod creator needs.
