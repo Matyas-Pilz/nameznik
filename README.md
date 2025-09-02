@@ -1,5 +1,5 @@
 Nameznik
-Adds some points from railway - fouling points, end points of train route, border points of railway companies - in Czech and Slovak design and fouling point in Austrian design. Technical names of nodes are in Czech language.
+Adds some point markers from railway - fouling point markers, end point markers of train route, border point markers of railway companies - in Czech and Slovak design and fouling point in Austrian design. Technical names of nodes are in Czech language.
 
 What are they?
 * Nameznik / Fouling point marker - the point where when two tracks join together; past that point it's not safe to leave a wagon parked because trains on the other track will collide. Uses on side of track.
